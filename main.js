@@ -598,3 +598,108 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('%c Zaiphar — Website loaded ✅', 'color:#6bbf92;font-weight:bold;font-size:14px;');
 
 });
+
+  /* ══════════════════════════════════════
+     21. BOOKING SECTION — Appointment type selector
+  ══════════════════════════════════════ */
+  const bookingTypeCards = document.querySelectorAll('.booking-type-card');
+  const selectedTypeLabel = document.getElementById('selected-type-label');
+  const bTypeInput = document.getElementById('b-type');
+
+  bookingTypeCards.forEach(card => {
+    card.addEventListener('click', () => {
+      bookingTypeCards.forEach(c => c.classList.remove('active-type'));
+      card.classList.add('active-type');
+      const label = card.dataset.label || card.querySelector('h4').textContent;
+      const type  = card.dataset.type;
+      if (selectedTypeLabel) selectedTypeLabel.textContent = label;
+      if (bTypeInput) bTypeInput.value = type;
+    });
+  });
+
+  /* ══════════════════════════════════════
+     22. BOOKING FORM — Validation & Submit
+  ══════════════════════════════════════ */
+  const bookingForm    = document.getElementById('booking-form');
+  const bookingSuccess = document.getElementById('booking-success');
+  const bookingReset   = document.getElementById('booking-reset');
+  const bookingSubmit  = document.getElementById('booking-submit');
+  const bookingSpinner = document.getElementById('booking-spinner');
+
+  // Set minimum date to today for booking
+  const bDateInput = document.getElementById('b-date');
+  if (bDateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    bDateInput.setAttribute('min', today);
+  }
+
+  function showBookingError(id, msg) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(`${id}-error`);
+    if (el)  el.classList.add('error');
+    if (err) err.textContent = msg;
+  }
+  function clearBookingError(id) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(`${id}-error`);
+    if (el)  el.classList.remove('error');
+    if (err) err.textContent = '';
+  }
+
+  ['b-fname','b-lname','b-email','b-phone','b-date','b-time'].forEach(id => {
+    const el = document.getElementById(id);
+    el?.addEventListener('blur',  () => validateBookingField(id));
+    el?.addEventListener('input', () => clearBookingError(id));
+    el?.addEventListener('change',() => clearBookingError(id));
+  });
+
+  function validateBookingField(id) {
+    const val = document.getElementById(id)?.value.trim() || '';
+    clearBookingError(id);
+    if (!val) { showBookingError(id, 'This field is required.'); return false; }
+    if (id === 'b-email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      showBookingError(id, 'Please enter a valid email address.'); return false;
+    }
+    if (id === 'b-phone' && !/^[\d\s\+\-\(\)]{7,15}$/.test(val)) {
+      showBookingError(id, 'Please enter a valid phone number.'); return false;
+    }
+    if (id === 'b-date') {
+      const selected = new Date(val);
+      const now = new Date(); now.setHours(0,0,0,0);
+      if (selected < now) { showBookingError(id, 'Please select a future date.'); return false; }
+      const day = selected.getDay();
+      if (day === 0) { showBookingError(id, 'We are closed on Sundays.'); return false; }
+    }
+    return true;
+  }
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fields = ['b-fname','b-lname','b-email','b-phone','b-date','b-time'];
+      let valid = true;
+      fields.forEach(id => { if (!validateBookingField(id)) valid = false; });
+      if (!valid) return;
+
+      bookingSubmit.disabled = true;
+      bookingSubmit.querySelector('.submit-text').textContent = 'Booking...';
+      bookingSpinner.classList.remove('hidden');
+
+      await new Promise(r => setTimeout(r, 1600));
+
+      bookingForm.classList.add('hidden');
+      bookingSuccess.classList.remove('hidden');
+    });
+  }
+
+  if (bookingReset) {
+    bookingReset.addEventListener('click', () => {
+      bookingForm.reset();
+      bookingForm.classList.remove('hidden');
+      bookingSuccess.classList.add('hidden');
+      bookingSubmit.disabled = false;
+      bookingSubmit.querySelector('.submit-text').textContent = 'Confirm Booking';
+      bookingSpinner.classList.add('hidden');
+    });
+  }
+

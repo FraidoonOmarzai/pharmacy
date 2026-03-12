@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaiphar — Your Trusted Pharmacy Partner</title>
+  <title>Zaiphar Pharmacy — NHS &amp; Private Services | Prescriptions &amp; Consultations</title>
+  <meta name="description" content="Zaiphar Pharmacy offers NHS and private pharmacy services including repeat prescriptions, Pharmacy First, travel vaccinations, weight management and more." />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       TOP BAR
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ TOP BAR ══════════════════════════════════════ -->
   <div class="topbar" id="topbar">
     <div class="topbar-left">
       <span class="topbar-item"><span class="topbar-icon">📍</span> 12 High Street, Townsville, TS1 2PH</span>
@@ -21,58 +20,51 @@
       <span class="topbar-item"><span class="topbar-icon">✉️</span> <a href="mailto:hello@zaiphar.co.uk">hello@zaiphar.co.uk</a></span>
     </div>
     <div class="topbar-right">
-      <span class="topbar-badge open" id="topbar-status">
-        <span class="status-dot"></span>
-        <span id="open-status-text">Open Now</span>
-      </span>
+      <span class="topbar-badge open" id="topbar-status"><span class="status-dot"></span><span id="open-status-text">Open Now</span></span>
       <span class="topbar-divider">|</span>
       <span class="topbar-item">Mon–Fri: 09:00–18:00 &nbsp;|&nbsp; Sat: 09:30–14:00</span>
       <button class="topbar-close" id="topbar-close" aria-label="Close top bar">✕</button>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ NAVIGATION ══════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <a href="#home" class="nav-logo">Zai<span>phar</span></a>
-
     <ul class="nav-links" id="nav-links">
       <li><a href="#services" class="nav-link">Services</a></li>
       <li class="has-dropdown">
         <a href="#nhs" class="nav-link">NHS Services <span class="chevron">▾</span></a>
         <ul class="dropdown">
-          <li><a href="#nhs">Repeat Prescriptions</a></li>
-          <li><a href="#nhs">Flu Vaccination</a></li>
-          <li><a href="#nhs">Blood Pressure Check</a></li>
-          <li><a href="#nhs">Smoking Cessation</a></li>
-          <li><a href="#nhs">NHS Health Check</a></li>
-          <li><a href="#nhs">Dosette Packs</a></li>
+          <li><a href="#nhs">Repeat Dispensing (EPS)</a></li>
+          <li><a href="#nhs">Seasonal Flu &amp; COVID Jab</a></li>
+          <li><a href="#nhs">Hypertension Case-Finding</a></li>
+          <li><a href="#nhs">Stop Smoking Programme</a></li>
+          <li><a href="#nhs">Structured Medication Review</a></li>
+          <li><a href="#nhs">Monitored Dosage Systems</a></li>
+          <li><a href="#nhs">Drug Treatment Service</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
         <a href="#private" class="nav-link">Private Services <span class="chevron">▾</span></a>
         <ul class="dropdown">
-          <li><a href="#private">Emergency Contraception</a></li>
-          <li><a href="#private">Travel Clinic</a></li>
-          <li><a href="#private">Weight Loss</a></li>
-          <li><a href="#private">Erectile Dysfunction</a></li>
-          <li><a href="#private">Hair Loss</a></li>
-          <li><a href="#private">Period Delay</a></li>
+          <li><a href="#private">Emergency Contraception (EHC)</a></li>
+          <li><a href="#private">Travel Health &amp; Immunisations</a></li>
+          <li><a href="#private">Weight Loss Injections (Mounjaro)</a></li>
+          <li><a href="#private">Men's Health &amp; ED</a></li>
+          <li><a href="#private">Hair Loss (Alopecia)</a></li>
+          <li><a href="#private">Menstrual Cycle Management</a></li>
+          <li><a href="#private">Pneumococcal Vaccine</a></li>
         </ul>
       </li>
       <li><a href="#pharmacy-first" class="nav-link">Pharmacy First</a></li>
+      <li><a href="#booking" class="nav-link">Book Appointment</a></li>
       <li><a href="#hours" class="nav-link">Visit Us</a></li>
     </ul>
-
     <div class="nav-actions">
-      <!-- <button class="btn-outline" id="open-login-btn">Login</button> -->
-      <a href="#prescription" class="btn-primary">Book Now</a>
+      <!-- <button class="btn-outline" id="open-login-btn">My Account</button> -->
+      <a href="#booking" class="btn-primary">Book Now</a>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 
   <!-- Mobile Drawer -->
@@ -83,168 +75,132 @@
       <button class="drawer-close" id="drawer-close">✕</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="#services">Services Overview</a></li>
+      <li><a href="#services">All Services</a></li>
       <li><a href="#nhs">NHS Services</a></li>
       <li><a href="#private">Private Services</a></li>
       <li><a href="#pharmacy-first">Pharmacy First</a></li>
       <li><a href="#prescription">Order Prescription</a></li>
+      <li><a href="#booking">Book Appointment</a></li>
       <li><a href="#hours">Opening Hours</a></li>
     </ul>
-    <div class="drawer-footer">
-      <a href="#prescription" class="btn-primary full-width">Book Appointment</a>
-    </div>
+    <div class="drawer-footer"><a href="#booking" class="btn-primary full-width">Book Appointment</a></div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
   <section class="hero" id="home">
     <div class="hero-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
+      <div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div>
     </div>
     <div class="hero-content animate-up">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        <span>Trusted Community Pharmacy</span>
-      </div>
-      <h1>Your Health,<br><em>Our Commitment</em></h1>
-      <p>Zaiphar provides expert pharmaceutical care, NHS and private services, and personalised health guidance — all under one roof.</p>
+      <div class="hero-badge"><span class="badge-dot"></span><span>GPhC Registered Community Pharmacy</span></div>
+      <h1>Expert Care,<br><em>Right on Your Doorstep</em></h1>
+      <p>Zaiphar delivers accredited NHS dispensing, discreet private consultations, and clinical Pharmacy First assessments — so you get the right medicine, from the right clinician, at the right time.</p>
       <div class="hero-actions">
         <a href="#services" class="btn-hero-main">Explore Services <span class="arrow">→</span></a>
-        <a href="#prescription" class="btn-hero-sec">📋 Order Prescription</a>
+        <a href="#prescription" class="btn-hero-sec">💊 Order Medication</a>
       </div>
       <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num" data-target="10000">0</div>
-          <div class="stat-suffix">+</div>
-          <div class="stat-label">Patients Served</div>
-        </div>
+        <div class="stat"><div class="stat-num" data-target="10000">0</div><div class="stat-suffix">+</div><div class="stat-label">Patients Served</div></div>
         <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="stat-num" data-target="50">0</div>
-          <div class="stat-suffix">+</div>
-          <div class="stat-label">Services Offered</div>
-        </div>
+        <div class="stat"><div class="stat-num" data-target="50">0</div><div class="stat-suffix">+</div><div class="stat-label">Clinical Services</div></div>
         <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="stat-num" data-target="98">0</div>
-          <div class="stat-suffix">%</div>
-          <div class="stat-label">Satisfaction Rate</div>
-        </div>
+        <div class="stat"><div class="stat-num" data-target="98">0</div><div class="stat-suffix">%</div><div class="stat-label">Patient Satisfaction</div></div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-circle-outer">
-        <div class="hero-circle-mid">
-          <div class="hero-circle-inner">
-            <div class="cross-mark"></div>
-          </div>
-        </div>
-      </div>
-      <div class="floating-card card-1">
-        <span class="fc-icon">💊</span>
-        <div><strong>Prescriptions</strong><br><small>Ready in 15 mins</small></div>
-      </div>
-      <div class="floating-card card-2">
-        <span class="fc-icon">🏥</span>
-        <div><strong>NHS Services</strong><br><small>Free for eligible</small></div>
-      </div>
+      <div class="hero-circle-outer"><div class="hero-circle-mid"><div class="hero-circle-inner"><div class="cross-mark"></div></div></div></div>
+      <div class="floating-card card-1"><span class="fc-icon">💊</span><div><strong>Same-Day Dispensing</strong><br><small>Ready within 15 minutes</small></div></div>
+      <div class="floating-card card-2"><span class="fc-icon">🏥</span><div><strong>NHS &amp; Private</strong><br><small>No referral needed</small></div></div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       SERVICES OVERVIEW
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ SERVICES OVERVIEW ══════════════════════════════════════ -->
   <section class="section services-intro" id="services">
     <div class="container">
       <div class="services-intro-grid">
         <div class="services-intro-text reveal">
-          <div class="section-eyebrow">Our Services</div>
-          <h2 class="section-title">Comprehensive Pharmacy Services</h2>
-          <p>Our pharmacy offers a wide spectrum of healthcare services — from NHS-funded treatments to private consultations — delivered by experienced pharmacists committed to your wellbeing.</p>
-          <a href="#prescription" class="btn-primary mt-2">Book an Appointment</a>
+          <div class="section-eyebrow">What We Offer</div>
+          <h2 class="section-title">A Complete Range of Pharmacy &amp; Clinical Services</h2>
+          <p>From dispensing your repeat medication to delivering advanced clinical consultations, Zaiphar is your first point of contact for community health. Our GPhC-registered team provides evidence-based care for every member of your family.</p>
+          <a href="#booking" class="btn-primary mt-2">Book a Consultation</a>
         </div>
         <div class="services-mini-grid">
           <div class="mini-card reveal" data-delay="0">
             <div class="mini-card-icon">🏥</div>
-            <h4>NHS Services</h4>
-            <p>Free, accessible care for all eligible patients including prescriptions, health checks, and more.</p>
+            <h4>NHS Dispensing &amp; Clinical Services</h4>
+            <p>Fully funded NHS services including repeat dispensing, vaccination programmes, hypertension screening, and structured medication reviews.</p>
           </div>
           <div class="mini-card reveal" data-delay="100">
             <div class="mini-card-icon">🔒</div>
-            <h4>Private Services</h4>
-            <p>Confidential, personalised treatments and consultations tailored to your individual needs.</p>
+            <h4>Self-Pay &amp; Private Consultations</h4>
+            <p>Discreet, fast-access private healthcare — from men's and women's health to travel immunisations and GLP-1 weight-loss injections.</p>
           </div>
           <div class="mini-card reveal" data-delay="200">
             <div class="mini-card-icon">💊</div>
-            <h4>Pharmacy First</h4>
-            <p>Fast, expert advice for common conditions — no GP appointment needed.</p>
+            <h4>Pharmacy First (Minor Ailments)</h4>
+            <p>Clinically assessed treatment for seven NHS-funded conditions — no GP referral or appointment required.</p>
           </div>
           <div class="mini-card reveal" data-delay="300">
             <div class="mini-card-icon">📋</div>
-            <h4>Prescriptions</h4>
-            <p>Repeat, electronic, and emergency prescriptions handled quickly and efficiently.</p>
+            <h4>Prescription Collection &amp; Delivery</h4>
+            <p>Electronic, paper, and repeat prescriptions dispensed same-day. Nominate us on the NHS App for seamless ordering.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       THREE PILLARS
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ THREE PILLARS ══════════════════════════════════════ -->
   <section class="section pillars" id="all-services">
     <div class="container">
       <div class="pillars-header reveal">
-        <div class="section-eyebrow light">Healthcare Pillars</div>
-        <h2 class="section-title light">Your Trusted Healthcare Provider</h2>
-        <p>Zaiphar brings together three core pillars of pharmacy care to ensure every patient receives the right treatment at the right time.</p>
+        <div class="section-eyebrow light">Our Three Pillars</div>
+        <h2 class="section-title light">Pharmacy Care You Can Count On</h2>
+        <p>Zaiphar combines NHS-commissioned services, self-pay clinical consultations, and the Pharmacy First programme — giving you a complete community health resource without the wait.</p>
       </div>
       <div class="pillars-cards">
         <div class="pillar-card nhs reveal" data-delay="0">
           <div class="pillar-num">01</div>
           <div class="pillar-badge nhs-badge">NHS Services</div>
-          <h3>NHS Pharmacy Services</h3>
-          <p>Funded by the NHS and free for eligible patients — ensuring no financial barrier stands between you and essential healthcare.</p>
+          <h3>NHS Dispensing &amp; Clinical Care</h3>
+          <p>Commissioned by the NHS and free at the point of use — from routine dispensing to structured health checks and vaccination clinics.</p>
           <ul class="pillar-list">
-            <li>Repeat Prescriptions</li>
-            <li>Flu Vaccination</li>
-            <li>Blood Pressure Check</li>
-            <li>Smoking Cessation</li>
-            <li>NHS Health Check</li>
-            <li>Medicines Management</li>
+            <li>Repeat &amp; Electronic Dispensing (EPS)</li>
+            <li>Seasonal Flu &amp; COVID Vaccination</li>
+            <li>Hypertension Case-Finding Service</li>
+            <li>NHS Stop Smoking Programme</li>
+            <li>Structured Medication Review (SMR)</li>
+            <li>Compliance Aids &amp; Monitored Dosage</li>
           </ul>
           <a href="#nhs" class="pillar-link nhs-link">View all NHS services →</a>
         </div>
         <div class="pillar-card private reveal" data-delay="150">
           <div class="pillar-num">02</div>
           <div class="pillar-badge priv-badge">Private Services</div>
-          <h3>Private Pharmacy Services</h3>
-          <p>Discreet, personalised care for conditions requiring privacy and tailored treatment plans without waiting for a GP.</p>
+          <h3>Self-Pay &amp; Private Healthcare</h3>
+          <p>Rapid, confidential access to treatments that don't require a GP — ideal when you need expert clinical advice quickly and privately.</p>
           <ul class="pillar-list">
-            <li>Emergency Contraception</li>
-            <li>Erectile Dysfunction</li>
-            <li>Travel Clinic &amp; Vaccines</li>
-            <li>Weight Management</li>
-            <li>Hair Loss Treatment</li>
-            <li>Period Delay</li>
+            <li>Emergency Hormonal Contraception (EHC)</li>
+            <li>Travel Health &amp; Immunisation Clinic</li>
+            <li>GLP-1 Weight Loss (Mounjaro / Wegovy)</li>
+            <li>Men's Health &amp; ED Consultations</li>
+            <li>Androgenetic Alopecia Treatment</li>
+            <li>Menstrual Cycle Management</li>
           </ul>
           <a href="#private" class="pillar-link priv-link">View all private services →</a>
         </div>
         <div class="pillar-card pharma reveal" data-delay="300">
           <div class="pillar-num">03</div>
           <div class="pillar-badge pharma-badge">Pharmacy First</div>
-          <h3>Pharmacy First Programme</h3>
-          <p>Get assessed and treated for common conditions directly by our pharmacist — saving you time and reducing pressure on GP practices.</p>
+          <h3>NHS Pharmacy First Programme</h3>
+          <p>Our pharmacist can clinically assess and supply prescription-only medicine for seven defined conditions — bypassing the need for a GP appointment entirely.</p>
           <ul class="pillar-list">
-            <li>Sore Throat</li>
-            <li>Urinary Tract Infections</li>
-            <li>Ear Infections</li>
-            <li>Shingles</li>
-            <li>Sinusitis</li>
-            <li>Impetigo &amp; Insect Bites</li>
+            <li>Acute Otitis Media (Ear Infections)</li>
+            <li>Infected Insect Bites</li>
+            <li>Impetigo (Skin Infection)</li>
+            <li>Herpes Zoster (Shingles)</li>
+            <li>Acute Sinusitis</li>
+            <li>Uncomplicated UTIs (Women)</li>
           </ul>
           <a href="#pharmacy-first" class="pillar-link pharma-link">Learn about Pharmacy First →</a>
         </div>
@@ -252,166 +208,118 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       NHS SERVICES
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ NHS SERVICES ══════════════════════════════════════ -->
   <section class="section nhs-section" id="nhs">
     <div class="container">
       <div class="split-layout">
         <div class="split-text sticky-col reveal">
           <div class="section-eyebrow">NHS Services</div>
-          <h2 class="section-title">Free NHS Pharmacy Care</h2>
-          <p>The NHS offers essential pharmacy services free of charge to all eligible patients. At Zaiphar, we deliver these services with the same warmth and expertise we extend to every patient who walks through our doors.</p>
-          <blockquote class="section-quote">
-            "From dispensing prescriptions to monitoring blood pressure, our NHS services are designed to make healthcare accessible, convenient, and consistent."
-          </blockquote>
+          <h2 class="section-title">Funded NHS Pharmacy Care</h2>
+          <p>As an NHS-contracted pharmacy, Zaiphar provides a comprehensive range of clinically commissioned services — all free for eligible patients. Our team works closely with local GP surgeries, PCNs, and ICBs to deliver joined-up care in your community.</p>
+          <blockquote class="section-quote">"We're more than a dispensary. From medication optimisation to preventive health screening, we're an accessible clinical resource for every patient we serve."</blockquote>
         </div>
         <div class="services-list-grid">
-          <div class="service-item reveal" data-delay="0">
-            <div class="si-icon">💊</div>
-            <div class="si-text"><h4>Repeat Prescriptions</h4><p>Order and collect your regular medications with ease.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="80">
-            <div class="si-icon">💉</div>
-            <div class="si-text"><h4>Flu Vaccination</h4><p>Seasonal flu jabs for eligible NHS patients at no cost.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="160">
-            <div class="si-icon">🩺</div>
-            <div class="si-text"><h4>Blood Pressure Check</h4><p>Free hypertension screening and monitoring service.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="240">
-            <div class="si-icon">🚭</div>
-            <div class="si-text"><h4>Smoking Cessation</h4><p>NHS-funded support to help you quit smoking for good.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="320">
-            <div class="si-icon">📦</div>
-            <div class="si-text"><h4>Dosette Packs</h4><p>Medicines organised in weekly blister packs for easy management.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="400">
-            <div class="si-icon">🗑️</div>
-            <div class="si-text"><h4>Dispose Medicines</h4><p>Safe disposal of unwanted or expired medications.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="480">
-            <div class="si-icon">❤️</div>
-            <div class="si-text"><h4>NHS Health Check</h4><p>Comprehensive health assessment to detect early risks.</p></div>
-          </div>
-          <div class="service-item reveal" data-delay="560">
-            <div class="si-icon">🔬</div>
-            <div class="si-text"><h4>Supervised Dispensing</h4><p>Supervised dispensing and substitute prescribing services.</p></div>
-          </div>
+          <div class="service-item reveal" data-delay="0"><div class="si-icon">💊</div><div class="si-text"><h4>Repeat &amp; Electronic Dispensing (EPS)</h4><p>Collect your regular medicines hassle-free. We accept NHS electronic prescriptions directly — no paper slip needed.</p></div></div>
+          <div class="service-item reveal" data-delay="80"><div class="si-icon">💉</div><div class="si-text"><h4>Seasonal Flu &amp; COVID Vaccination</h4><p>Annual influenza and COVID booster jabs for eligible NHS patients — walk-in, no GP appointment needed.</p></div></div>
+          <div class="service-item reveal" data-delay="160"><div class="si-icon">🩺</div><div class="si-text"><h4>Hypertension Case-Finding Service</h4><p>Free ambulatory blood pressure monitoring and referral pathway for patients identified as hypertensive.</p></div></div>
+          <div class="service-item reveal" data-delay="240"><div class="si-icon">🚭</div><div class="si-text"><h4>NHS Stop Smoking Programme</h4><p>Behavioural support combined with evidence-based NRT and varenicline to help you quit for good.</p></div></div>
+          <div class="service-item reveal" data-delay="320"><div class="si-icon">📦</div><div class="si-text"><h4>Monitored Dosage Systems (MDS)</h4><p>Weekly Dosette or blister-packed medicines for patients who need extra help managing complex medication regimens.</p></div></div>
+          <div class="service-item reveal" data-delay="400"><div class="si-icon">♻️</div><div class="si-text"><h4>Medication Disposal Service</h4><p>Safe, environmentally responsible disposal of unwanted or out-of-date medicines — always free, no questions asked.</p></div></div>
+          <div class="service-item reveal" data-delay="480"><div class="si-icon">❤️</div><div class="si-text"><h4>Structured Medication Review (SMR)</h4><p>In-depth clinical review of your medicines with a pharmacist prescriber to optimise therapy and minimise side-effects.</p></div></div>
+          <div class="service-item reveal" data-delay="560"><div class="si-icon">🔬</div><div class="si-text"><h4>Drug Treatment &amp; Supervised Consumption</h4><p>Supervised methadone and buprenorphine dispensing as part of NHS community drug treatment programmes.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       PRIVATE SERVICES
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ PRIVATE SERVICES ══════════════════════════════════════ -->
   <section class="section private-section" id="private">
     <div class="container">
       <div class="split-layout reverse">
         <div class="private-grid">
-          <div class="priv-card reveal" data-delay="0">
-            <div class="pc-icon">🛡️</div>
-            <h4>Emergency Contraception</h4>
-            <p>Confidential, fast access to emergency hormonal contraception.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="80">
-            <div class="pc-icon">✈️</div>
-            <h4>Travel Clinic</h4>
-            <p>Vaccines, antimalarials, and travel health advice for any destination.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="160">
-            <div class="pc-icon">⚖️</div>
-            <h4>Weight Loss Programme</h4>
-            <p>Medically supported weight management tailored to your goals.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="240">
-            <div class="pc-icon">💪</div>
-            <h4>Erectile Dysfunction</h4>
-            <p>Private, discreet consultation and prescription for ED treatment.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="320">
-            <div class="pc-icon">💇</div>
-            <h4>Hair Loss Treatment</h4>
-            <p>Clinically proven treatments and personalised advice for hair loss.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="400">
-            <div class="pc-icon">📅</div>
-            <h4>Period Delay</h4>
-            <p>Safe, prescribed medication to delay menstruation for special occasions.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="480">
-            <div class="pc-icon">🩺</div>
-            <h4>Private Prescription</h4>
-            <p>Fast, private prescriptions dispensed without NHS wait times.</p>
-          </div>
-          <div class="priv-card reveal" data-delay="560">
-            <div class="pc-icon">💉</div>
-            <h4>Private Flu Vaccine</h4>
-            <p>Flu vaccination available privately for non-NHS eligible patients.</p>
-          </div>
+          <div class="priv-card reveal" data-delay="0"><div class="pc-icon">🛡️</div><h4>Emergency Hormonal Contraception (EHC)</h4><p>Same-day, confidential supply of the morning-after pill (Levonorgestrel or ellaOne) without a GP visit.</p></div>
+          <div class="priv-card reveal" data-delay="80"><div class="pc-icon">✈️</div><h4>Travel Health &amp; Immunisation Clinic</h4><p>Destination-specific vaccines (Typhoid, Hep A/B, Yellow Fever), malaria prophylaxis, and fit-to-fly certificates.</p></div>
+          <div class="priv-card reveal" data-delay="160"><div class="pc-icon">⚖️</div><h4>GLP-1 Weight Management (Mounjaro / Wegovy)</h4><p>Clinically supervised weight-loss injection programmes with pharmacist-led monitoring and lifestyle coaching.</p></div>
+          <div class="priv-card reveal" data-delay="240"><div class="pc-icon">💪</div><h4>Men's Health &amp; ED Clinic</h4><p>Private, judgement-free consultation for erectile dysfunction — prescription issued and dispensed in a single visit.</p></div>
+          <div class="priv-card reveal" data-delay="320"><div class="pc-icon">💇</div><h4>Androgenetic Alopecia (Hair Loss)</h4><p>Evidence-based treatments including Finasteride and Minoxidil with personalised pharmacist assessment.</p></div>
+          <div class="priv-card reveal" data-delay="400"><div class="pc-icon">📅</div><h4>Menstrual Cycle Management (Period Delay)</h4><p>Prescription-strength Norethisterone supplied discreetly to postpone menstruation for holidays or special events.</p></div>
+          <div class="priv-card reveal" data-delay="480"><div class="pc-icon">📝</div><h4>Private Prescription Dispensing</h4><p>Fast, discreet dispensing of private prescriptions from any registered UK prescriber — no NHS wait times.</p></div>
+          <div class="priv-card reveal" data-delay="560"><div class="pc-icon">💉</div><h4>Pneumococcal &amp; Private Flu Vaccination</h4><p>Private immunisation for non-NHS-eligible patients, corporate clients, and those wanting early-season protection.</p></div>
         </div>
         <div class="split-text sticky-col reveal">
-          <div class="section-eyebrow">Private Services</div>
-          <h2 class="section-title">Personalised Private Healthcare</h2>
-          <p>Our private pharmacy services offer confidential, personalised care delivered by our qualified pharmacists. Whether you prefer privacy, speed, or simply wish to avoid a GP appointment — we're here.</p>
+          <div class="section-eyebrow">Private &amp; Self-Pay</div>
+          <h2 class="section-title">Discreet, Expert Private Healthcare</h2>
+          <p>Our self-pay services give you fast, confidential access to treatments and clinical advice — delivered by our qualified pharmacist prescribers. Skip the wait and get the care you need today.</p>
           <div class="priv-cta-box">
-            <h4>Ready to book a private consultation?</h4>
-            <p>Our pharmacists are available for discreet, professional appointments at your convenience.</p>
-            <a href="#prescription" class="btn-gold">Book Appointment →</a>
+            <h4>Book a private consultation</h4>
+            <p>All private appointments are conducted in our confidential consultation room. No referral required — just book online or walk in.</p>
+            <a href="#booking" class="btn-gold">Book a Consultation →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       PHARMACY FIRST
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ PHARMACY FIRST ══════════════════════════════════════ -->
   <section class="section pharma-first-section" id="pharmacy-first">
     <div class="rx-watermark">Rx</div>
     <div class="container">
       <div class="pharma-grid">
         <div class="pharma-text reveal">
           <div class="section-eyebrow light">Pharmacy First</div>
-          <h2 class="section-title light">Treat Common Conditions — Without a GP Visit</h2>
-          <p>Under the NHS Pharmacy First programme, our pharmacists can assess, advise, and in many cases prescribe treatment for a range of everyday conditions — getting you better, faster.</p>
+          <h2 class="section-title light">Get Treated Today — No GP Needed</h2>
+          <p>The NHS Pharmacy First scheme empowers our pharmacists to clinically assess, diagnose, and supply prescription-only medicines for seven common conditions — reducing demand on GP surgeries and getting you better, faster.</p>
           <div class="pharma-callout">
-            <p>We may be able to offer <strong>prescription-strength treatment</strong> directly from our pharmacy for eligible conditions, helping ease pressure on GP practices and getting you the care you need sooner.</p>
+            <p>Our pharmacists are <strong>independent prescribers</strong> — fully qualified to assess your symptoms and issue a clinical treatment plan under the Pharmacy First framework, at <strong>no cost to eligible NHS patients</strong>.</p>
           </div>
-          <a href="#prescription" class="btn-primary mt-2">Get Treated Now</a>
+          <a href="#booking" class="btn-primary mt-2">Get a Clinical Assessment</a>
         </div>
         <div class="conditions-grid">
-          <div class="condition-pill reveal" data-delay="0"><span class="cond-icon">👂</span><span>Ear Infection</span></div>
+          <div class="condition-pill reveal" data-delay="0"><span class="cond-icon">👂</span><span>Acute Otitis Media (Ear)</span></div>
           <div class="condition-pill reveal" data-delay="80"><span class="cond-icon">🦠</span><span>Impetigo</span></div>
-          <div class="condition-pill reveal" data-delay="160"><span class="cond-icon">🪲</span><span>Insect Bite</span></div>
-          <div class="condition-pill reveal" data-delay="240"><span class="cond-icon">⚡</span><span>Shingles</span></div>
-          <div class="condition-pill reveal" data-delay="320"><span class="cond-icon">😤</span><span>Sinusitis</span></div>
-          <div class="condition-pill reveal" data-delay="400"><span class="cond-icon">🤒</span><span>Sore Throat</span></div>
-          <div class="condition-pill reveal" data-delay="480"><span class="cond-icon">🚽</span><span>Urinary Tract Infection</span></div>
-          <div class="condition-pill reveal" data-delay="560"><span class="cond-icon">💬</span><span>Health Advice</span></div>
+          <div class="condition-pill reveal" data-delay="160"><span class="cond-icon">🪲</span><span>Infected Insect Bites</span></div>
+          <div class="condition-pill reveal" data-delay="240"><span class="cond-icon">⚡</span><span>Herpes Zoster (Shingles)</span></div>
+          <div class="condition-pill reveal" data-delay="320"><span class="cond-icon">😤</span><span>Acute Sinusitis</span></div>
+          <div class="condition-pill reveal" data-delay="400"><span class="cond-icon">🤒</span><span>Acute Pharyngitis</span></div>
+          <div class="condition-pill reveal" data-delay="480"><span class="cond-icon">🚽</span><span>Uncomplicated UTI (Women)</span></div>
+          <div class="condition-pill reveal" data-delay="560"><span class="cond-icon">💬</span><span>Minor Ailments Advice</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       PRESCRIPTION / BOOKING
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ PRESCRIPTION (with NHS App) ══════════════════════════════════════ -->
   <section class="prescription-section" id="prescription">
     <div class="presc-visual">
-      <h2>Order Your Prescription Online</h2>
-      <p>Submit your request and we'll have it ready for collection — or arrange home delivery where available.</p>
+      <h2>Order Your Medication Online</h2>
+      <p>Three easy ways to get your prescription dispensed at Zaiphar — choose whichever works best for you.</p>
+
+      <!-- NHS APP HIGHLIGHT -->
+      <div class="nhs-app-box">
+        <div class="nhs-app-icon">📱</div>
+        <div class="nhs-app-content">
+          <h4>Fastest Method — NHS App</h4>
+          <p>Order your repeat prescription and nominate Zaiphar as your preferred dispensing pharmacy — all from your smartphone in under 2 minutes.</p>
+          <a href="https://www.nhsapp.service.nhs.uk/" target="_blank" rel="noopener noreferrer" class="nhs-app-btn">Open NHS App →</a>
+        </div>
+      </div>
+
+      <div class="presc-divider"><span>or complete the form below</span></div>
+
       <ul class="steps-list">
-        <li><span class="step-num">1</span><span>Fill in your details and prescription information</span></li>
-        <li><span class="step-num">2</span><span>We process and prepare your medicines</span></li>
-        <li><span class="step-num">3</span><span>Collect in store or arrange delivery</span></li>
+        <li><span class="step-num">1</span><span>Complete the form with your details and medication</span></li>
+        <li><span class="step-num">2</span><span>Our dispensary team processes and prepares your order</span></li>
+        <li><span class="step-num">3</span><span>Collect in-branch or arrange home delivery</span></li>
       </ul>
+
+      <div class="presc-note">
+        <strong>💡 Tip:</strong> You can nominate Zaiphar as your regular dispensing pharmacy through the NHS App or via your GP surgery — your repeat scripts will then come to us automatically every time.
+      </div>
     </div>
+
     <div class="presc-form">
-      <div class="section-eyebrow">Prescriptions</div>
-      <h2 class="section-title">Request Your Prescription</h2>
+      <div class="section-eyebrow">Prescription Request</div>
+      <h2 class="section-title">Request Your Medication</h2>
       <form id="prescription-form" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -430,15 +338,17 @@
           <input type="email" id="email" name="email" placeholder="your@email.com" required />
           <span class="field-error" id="email-error"></span>
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required />
-          <span class="field-error" id="phone-error"></span>
-        </div>
-        <div class="form-group">
-          <label for="dob">Date of Birth <span class="req">*</span></label>
-          <input type="date" id="dob" name="dob" required />
-          <span class="field-error" id="dob-error"></span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required />
+            <span class="field-error" id="phone-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth <span class="req">*</span></label>
+            <input type="date" id="dob" name="dob" required />
+            <span class="field-error" id="dob-error"></span>
+          </div>
         </div>
         <div class="form-group">
           <label for="presc-type">Prescription Type</label>
@@ -446,13 +356,25 @@
             <option value="">-- Select type --</option>
             <option value="repeat">Repeat Prescription</option>
             <option value="eps">Electronic Prescription (EPS)</option>
-            <option value="new">New Prescription</option>
-            <option value="emergency">Emergency Supply</option>
+            <option value="new">New / One-off Prescription</option>
+            <option value="emergency">Emergency Supply Request</option>
+            <option value="private">Private Prescription</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="List your medications or any special requests..."></textarea>
+          <label for="gp">Your GP Surgery</label>
+          <input type="text" id="gp" name="gp" placeholder="e.g. Townsville Medical Centre" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Medication &amp; Additional Notes</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="List your medications, dosages, or any special requests..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="collect">Collection / Delivery Preference</label>
+          <select id="collect" name="collect">
+            <option value="collect">I will collect in-branch</option>
+            <option value="delivery">Home delivery (where available)</option>
+          </select>
         </div>
         <button type="submit" class="form-submit" id="form-submit">
           <span class="submit-text">Submit Request</span>
@@ -460,39 +382,187 @@
           <span class="submit-spinner hidden" id="submit-spinner">⏳</span>
         </button>
       </form>
-      <!-- Success Message -->
       <div class="form-success hidden" id="form-success">
         <div class="success-icon">✅</div>
-        <h3>Request Submitted!</h3>
-        <p>Thank you. We'll have your prescription ready and contact you shortly on the details provided.</p>
-        <button class="btn-primary" id="form-reset">Submit Another</button>
+        <h3>Request Received!</h3>
+        <p>Thank you. Our dispensary team will process your request and contact you when your medication is ready for collection or dispatch.</p>
+        <button class="btn-primary" id="form-reset">Submit Another Request</button>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       OPENING HOURS
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ BOOKING SECTION ══════════════════════════════════════ -->
+  <section class="section booking-section" id="booking">
+    <div class="container">
+      <div class="booking-header reveal">
+        <div class="section-eyebrow">Appointments</div>
+        <h2 class="section-title">Book a Pharmacy Consultation</h2>
+        <p>Reserve a private, one-to-one appointment with one of our clinical pharmacists — available for NHS Pharmacy First assessments, private consultations, vaccination clinics, and structured medication reviews.</p>
+      </div>
+
+      <!-- Appointment Type Selector -->
+      <div class="booking-types">
+        <div class="booking-type-card reveal active-type" data-type="pharmacy-first" data-label="Pharmacy First (NHS — Free)">
+          <div class="bt-icon">💊</div>
+          <h4>Pharmacy First</h4>
+          <p>NHS clinical assessment for common conditions</p>
+          <span class="bt-price free">FREE</span>
+        </div>
+        <div class="booking-type-card reveal" data-delay="100" data-type="private" data-label="Private Consultation">
+          <div class="bt-icon">🔒</div>
+          <h4>Private Consultation</h4>
+          <p>Men's health, weight management, contraception &amp; more</p>
+          <span class="bt-price">From £25</span>
+        </div>
+        <div class="booking-type-card reveal" data-delay="200" data-type="vaccination" data-label="Vaccination Clinic">
+          <div class="bt-icon">💉</div>
+          <h4>Vaccination Clinic</h4>
+          <p>Travel jabs, flu, pneumococcal &amp; more</p>
+          <span class="bt-price">From £15</span>
+        </div>
+        <div class="booking-type-card reveal" data-delay="300" data-type="medication-review" data-label="Medication Review (NHS — Free)">
+          <div class="bt-icon">📋</div>
+          <h4>Medication Review</h4>
+          <p>NHS Structured Medication Review (SMR)</p>
+          <span class="bt-price free">FREE</span>
+        </div>
+      </div>
+
+      <!-- Booking Form + Info Panel -->
+      <div class="booking-form-wrap reveal">
+        <div class="booking-form-inner">
+          <div class="booking-form-left">
+            <h3>Your Appointment Details</h3>
+            <p class="selected-type-display">Selected: <strong id="selected-type-label">Pharmacy First (NHS — Free)</strong></p>
+
+            <form id="booking-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-fname">First Name <span class="req">*</span></label>
+                  <input type="text" id="b-fname" placeholder="Sarah" required />
+                  <span class="field-error" id="b-fname-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="b-lname">Surname <span class="req">*</span></label>
+                  <input type="text" id="b-lname" placeholder="Johnson" required />
+                  <span class="field-error" id="b-lname-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="b-email">Email Address <span class="req">*</span></label>
+                <input type="email" id="b-email" placeholder="your@email.com" required />
+                <span class="field-error" id="b-email-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="b-phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="b-phone" placeholder="+44 7700 000000" required />
+                <span class="field-error" id="b-phone-error"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-date">Preferred Date <span class="req">*</span></label>
+                  <input type="date" id="b-date" required />
+                  <span class="field-error" id="b-date-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="b-time">Preferred Time <span class="req">*</span></label>
+                  <select id="b-time" required>
+                    <option value="">-- Select a slot --</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="09:30">09:30 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="10:30">10:30 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="11:30">11:30 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="14:30">02:30 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="15:30">03:30 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                    <option value="16:30">04:30 PM</option>
+                    <option value="17:00">05:00 PM</option>
+                  </select>
+                  <span class="field-error" id="b-time-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="b-reason">Reason for Appointment / Symptoms</label>
+                <textarea id="b-reason" rows="3" placeholder="Briefly describe your symptoms or the reason for your visit..."></textarea>
+              </div>
+              <input type="hidden" id="b-type" value="pharmacy-first" />
+              <button type="submit" class="form-submit" id="booking-submit">
+                <span class="submit-text">Confirm Booking</span>
+                <span class="submit-arrow">→</span>
+                <span class="submit-spinner hidden" id="booking-spinner">⏳</span>
+              </button>
+            </form>
+
+            <div class="form-success hidden" id="booking-success">
+              <div class="success-icon">🗓️</div>
+              <h3>Appointment Requested!</h3>
+              <p>We'll confirm your slot by phone or email within 2 hours during opening times. Please arrive 5 minutes early with your ID and any relevant medication or letters.</p>
+              <button class="btn-primary" id="booking-reset">Book Another Appointment</button>
+            </div>
+          </div>
+
+          <!-- Info Panel -->
+          <div class="booking-form-right">
+            <div class="booking-info-panel">
+              <h4>📍 Where to Find Us</h4>
+              <p>12 High Street<br>Townsville<br>TS1 2PH</p>
+              <div class="booking-map-placeholder">
+                <span>🗺️</span>
+                <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank">Get Directions →</a>
+              </div>
+
+              <div class="booking-info-divider"></div>
+
+              <h4>⏰ Consultation Hours</h4>
+              <ul class="booking-slot-list">
+                <li><span>Monday – Thursday</span><span>09:00 – 17:00</span></li>
+                <li><span>Friday</span><span>09:00 – 16:30</span></li>
+                <li><span>Saturday</span><span>09:30 – 13:00</span></li>
+                <li><span>Sunday</span><span>Closed</span></li>
+              </ul>
+
+              <div class="booking-info-divider"></div>
+
+              <h4>✅ What to Bring</h4>
+              <ul class="booking-bring-list">
+                <li>Photo ID (for private services)</li>
+                <li>Current medication list or repeat slip</li>
+                <li>Any relevant medical letters or results</li>
+                <li>NHS number (if known)</li>
+              </ul>
+
+              <a href="tel:+441234567890" class="booking-call-btn">📞 Prefer to call? 01234 567 890</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ OPENING HOURS ══════════════════════════════════════ -->
   <section class="section hours-section" id="hours">
     <div class="container">
       <div class="hours-grid">
         <div class="hours-info reveal">
           <div class="section-eyebrow">Visit Us</div>
-          <h2 class="section-title">We're Here When You Need Us</h2>
-          <p>Our friendly team is available throughout the week to assist with prescriptions, health queries, and appointments. Walk-ins are always welcome.</p>
-          <p>Located in the heart of the community, Zaiphar is easily accessible by public transport and has nearby parking.</p>
+          <h2 class="section-title">We're Open &amp; Ready to Help</h2>
+          <p>Our dispensary and private consultation room are available throughout the week. Walk-in patients are always welcome for prescription collection, over-the-counter advice, and general health queries.</p>
+          <p>We are conveniently located on the High Street with step-free access, nearby car parking, and a bus stop directly outside.</p>
           <div class="contact-chips">
             <a href="tel:+441234567890" class="chip">📞 Call Us</a>
             <a href="mailto:hello@zaiphar.co.uk" class="chip">✉️ Email Us</a>
-            <a href="https://maps.google.com" target="_blank" class="chip">📍 Get Directions</a>
+            <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank" class="chip">📍 Get Directions</a>
             <button class="chip" id="live-chat-btn">💬 Live Chat</button>
+            <a href="https://www.nhsapp.service.nhs.uk/" target="_blank" class="chip nhs-chip">📱 NHS App</a>
           </div>
         </div>
         <div class="hours-card reveal" data-delay="200">
-          <div class="open-badge" id="hours-badge">
-            <span class="status-dot"></span>
-            <span id="hours-status-text">Open Now</span>
-          </div>
+          <div class="open-badge" id="hours-badge"><span class="status-dot"></span><span id="hours-status-text">Open Now</span></div>
           <h3>Opening Hours</h3>
           <div class="hours-table" id="hours-table">
             <div class="hours-row" data-day="1"><span class="day">Monday</span><span class="time">09:00 – 18:00</span></div>
@@ -508,54 +578,50 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       TRUST BAR
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ TRUST BAR ══════════════════════════════════════ -->
   <div class="trust-bar">
-    <div class="trust-item reveal"><div class="ti-icon">🏅</div><h4>GPhC Registered</h4><p>Fully regulated and accredited</p></div>
-    <div class="trust-item reveal" data-delay="100"><div class="ti-icon">🔒</div><h4>100% Confidential</h4><p>All records strictly private</p></div>
-    <div class="trust-item reveal" data-delay="200"><div class="ti-icon">💬</div><h4>Expert Advice</h4><p>Qualified pharmacists on hand</p></div>
-    <div class="trust-item reveal" data-delay="300"><div class="ti-icon">🚀</div><h4>Fast Dispensing</h4><p>Most prescriptions in 15 minutes</p></div>
+    <div class="trust-item reveal"><div class="ti-icon">🏅</div><h4>GPhC Registered</h4><p>Fully regulated &amp; accredited pharmacy</p></div>
+    <div class="trust-item reveal" data-delay="100"><div class="ti-icon">🔒</div><h4>100% Confidential</h4><p>All consultations strictly private</p></div>
+    <div class="trust-item reveal" data-delay="200"><div class="ti-icon">🩺</div><h4>Independent Prescribers</h4><p>Clinically qualified pharmacist team</p></div>
+    <div class="trust-item reveal" data-delay="300"><div class="ti-icon">🚀</div><h4>Same-Day Dispensing</h4><p>Most prescriptions ready in 15 minutes</p></div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
         <span class="footer-logo">Zai<span>phar</span></span>
-        <p>We are proud to serve our community with top-notch pharmaceutical services and personalised care. Your health and wellbeing are our top priorities.</p>
+        <p>Zaiphar is a GPhC-registered community pharmacy committed to delivering accessible, high-quality clinical care to every patient we serve. Your health is our priority.</p>
         <div class="gphc-info">
           <div>📋 Premises GPhC No: <strong>1000000</strong></div>
           <div>👨‍⚕️ Superintendent Pharmacist: <strong>Zaiphar Lead Pharmacist</strong></div>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>Our Services</h4>
         <ul>
-          <li><a href="#nhs">NHS Services</a></li>
-          <li><a href="#private">Private Services</a></li>
+          <li><a href="#nhs">NHS Dispensing &amp; Clinical Services</a></li>
+          <li><a href="#private">Private &amp; Self-Pay</a></li>
           <li><a href="#pharmacy-first">Pharmacy First</a></li>
-          <li><a href="#prescription">Order Prescription</a></li>
-          <li><a href="#hours">Book Appointment</a></li>
+          <li><a href="#prescription">Order Medication</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Health Info</h4>
+        <h4>Health Resources</h4>
         <ul>
-          <li><a href="#">Health A–Z</a></li>
-          <li><a href="#">Healthy Living Zone</a></li>
-          <li><a href="#">NHS Live Well</a></li>
-          <li><a href="#">Travel Health</a></li>
-          <li><a href="#">Medicines Guide</a></li>
+          <li><a href="https://www.nhsapp.service.nhs.uk/" target="_blank">NHS App</a></li>
+          <li><a href="https://www.nhs.uk/live-well/" target="_blank">NHS Live Well</a></li>
+          <li><a href="https://travelhealthpro.org.uk/" target="_blank">Travel Health Pro</a></li>
+          <li><a href="https://www.nhs.uk/conditions/" target="_blank">Health A–Z</a></li>
+          <li><a href="#">Medicines Information</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>About Zaiphar</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Pharmacists</a></li>
+          <li><a href="#">About Our Pharmacy</a></li>
+          <li><a href="#">Our Clinical Team</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms &amp; Conditions</a></li>
@@ -563,7 +629,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>&copy; <span id="footer-year"></span> Zaiphar. All rights reserved.</div>
+      <div>&copy; <span id="footer-year"></span> Zaiphar Pharmacy. All rights reserved.</div>
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Cookies Policy</a>
@@ -572,9 +638,7 @@
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════════
-       LOGIN MODAL
-  ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ LOGIN MODAL ══════════════════════════════════════ -->
   <div class="modal-overlay hidden" id="login-modal">
     <div class="modal">
       <button class="modal-close" id="close-login">✕</button>
@@ -582,27 +646,20 @@
         <button class="modal-tab active" data-tab="login">Login</button>
         <button class="modal-tab" data-tab="signup">Sign Up</button>
       </div>
-
       <div class="modal-panel active" id="panel-login">
         <h3>Welcome Back</h3>
         <form id="login-form" novalidate>
-          <div class="form-group">
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" placeholder="your@email.com" required />
-          </div>
+          <div class="form-group"><label for="login-email">Email</label><input type="email" id="login-email" placeholder="your@email.com" required /></div>
           <div class="form-group password-group">
             <label for="login-pass">Password</label>
             <input type="password" id="login-pass" placeholder="••••••••" required />
             <button type="button" class="toggle-pass" data-target="login-pass">👁</button>
           </div>
-          <div class="form-check">
-            <input type="checkbox" id="remember" /><label for="remember">Keep me logged in</label>
-          </div>
+          <div class="form-check"><input type="checkbox" id="remember" /><label for="remember">Keep me logged in</label></div>
           <button type="submit" class="btn-primary full-width">Login</button>
           <p class="modal-link"><a href="#" id="forgot-link">Forgotten your password?</a></p>
         </form>
       </div>
-
       <div class="modal-panel hidden" id="panel-signup">
         <h3>Create Account</h3>
         <form id="signup-form" novalidate>
@@ -622,15 +679,10 @@
     </div>
   </div>
 
-  <!-- Live Chat Widget -->
+  <!-- Chat Widget -->
   <div class="chat-widget" id="chat-widget">
-    <div class="chat-header">
-      <span>💬 Chat with us</span>
-      <button id="chat-close">✕</button>
-    </div>
-    <div class="chat-body" id="chat-body">
-      <div class="chat-msg bot">Hello! How can we help you today? 😊</div>
-    </div>
+    <div class="chat-header"><span>💬 Chat with Zaiphar</span><button id="chat-close">✕</button></div>
+    <div class="chat-body" id="chat-body"><div class="chat-msg bot">Hello! 👋 Welcome to Zaiphar. How can we help you today?</div></div>
     <div class="chat-input-row">
       <input type="text" id="chat-input" placeholder="Type a message..." />
       <button id="chat-send">Send</button>
@@ -638,12 +690,10 @@
   </div>
   <button class="chat-fab" id="chat-fab" aria-label="Open chat">💬</button>
 
-  <!-- Back to top -->
   <button class="back-to-top hidden" id="back-to-top" aria-label="Back to top">↑</button>
 
-  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookie-banner">
-    <p>We use cookies to enhance your browsing experience. By clicking 'Accept', you consent to our use of cookies.</p>
+    <p>We use cookies to improve your browsing experience. By clicking 'Accept', you consent to our use of cookies in line with our Privacy Policy.</p>
     <div class="cookie-actions">
       <button class="btn-outline small" id="cookie-decline">Decline</button>
       <button class="btn-primary small" id="cookie-accept">Accept</button>
