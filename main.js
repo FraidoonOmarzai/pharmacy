@@ -28,21 +28,136 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ══════════════════════════════════════
      2. TOPBAR / NAVBAR — Open status
   ══════════════════════════════════════ */
-  const hoursData = {
-    // day index (0=Sun) → [openHH, openMM, closeHH, closeMM] or null
-    0: null,
-    1: [9, 0, 18, 0],
-    2: [9, 0, 18, 0],
-    3: [9, 0, 18, 0],
-    4: [9, 0, 18, 0],
-    5: [9, 0, 17, 30],
-    6: [9, 30, 14, 0],
-  };
+  const locations = [
+    {
+      name: 'Demo 1',
+      addressOneLine: '12 High Street, Townsville, TS1 2PH',
+      phoneE164: '+441234567890',
+      phoneDisplay: '01234 567 890',
+      email: 'hello@hathawaypharmacy.co.uk',
+      directionsQuery: '12+High+Street+Townsville',
+      openByDay: {
+        0: null,
+        1: [9, 0, 18, 0],
+        2: [9, 0, 18, 0],
+        3: [9, 0, 18, 0],
+        4: [9, 0, 18, 0],
+        5: [9, 0, 17, 30],
+        6: [9, 30, 14, 0],
+      },
+      bookingConsultationHours: [
+        { label: 'Monday – Thursday', value: '09:00 – 17:00' },
+        { label: 'Friday', value: '09:00 – 16:30' },
+        { label: 'Saturday', value: '09:30 – 13:00' },
+        { label: 'Sunday', value: 'Closed' },
+      ],
+    },
+    {
+      name: 'Demo 2',
+      addressOneLine: '22 Market Road, Townsville, TS2 3AB',
+      phoneE164: '+441234567891',
+      phoneDisplay: '01234 567 891',
+      email: 'demo2@hathawaypharmacy.co.uk',
+      directionsQuery: '22+Market+Road+Townsville',
+      openByDay: {
+        0: null,
+        1: [8, 30, 17, 30],
+        2: [8, 30, 17, 30],
+        3: [8, 30, 17, 30],
+        4: [8, 30, 17, 30],
+        5: [9, 0, 16, 0],
+        6: null,
+      },
+      bookingConsultationHours: [
+        { label: 'Monday – Thursday', value: '08:30 – 16:30' },
+        { label: 'Friday', value: '09:00 – 15:30' },
+        { label: 'Saturday', value: 'Closed' },
+        { label: 'Sunday', value: 'Closed' },
+      ],
+    },
+    {
+      name: 'Demo 3',
+      addressOneLine: '5 River Street, Townsville, TS4 5CD',
+      phoneE164: '+441234567892',
+      phoneDisplay: '01234 567 892',
+      email: 'demo3@hathawaypharmacy.co.uk',
+      directionsQuery: '5+River+Street+Townsville',
+      openByDay: {
+        0: null,
+        1: [10, 0, 18, 0],
+        2: [10, 0, 18, 0],
+        3: [10, 0, 18, 0],
+        4: [10, 0, 18, 0],
+        5: [10, 0, 17, 0],
+        6: [10, 0, 14, 0],
+      },
+      bookingConsultationHours: [
+        { label: 'Monday – Thursday', value: '10:00 – 17:00' },
+        { label: 'Friday', value: '10:00 – 16:00' },
+        { label: 'Saturday', value: '10:00 – 13:00' },
+        { label: 'Sunday', value: 'Closed' },
+      ],
+    },
+    {
+      name: 'Demo 4',
+      addressOneLine: '78 Station Lane, Townsville, TS6 7EF',
+      phoneE164: '+441234567893',
+      phoneDisplay: '01234 567 893',
+      email: 'demo4@hathawaypharmacy.co.uk',
+      directionsQuery: '78+Station+Lane+Townsville',
+      openByDay: {
+        0: null,
+        1: [9, 0, 19, 0],
+        2: [9, 0, 19, 0],
+        3: [9, 0, 19, 0],
+        4: [9, 0, 19, 0],
+        5: [9, 0, 17, 0],
+        6: [9, 0, 13, 30],
+      },
+      bookingConsultationHours: [
+        { label: 'Monday – Thursday', value: '09:00 – 18:00' },
+        { label: 'Friday', value: '09:00 – 16:00' },
+        { label: 'Saturday', value: '09:00 – 13:00' },
+        { label: 'Sunday', value: 'Closed' },
+      ],
+    },
+    {
+      name: 'Demo 5',
+      addressOneLine: '3 Orchard Way, Townsville, TS8 9GH',
+      phoneE164: '+441234567894',
+      phoneDisplay: '01234 567 894',
+      email: 'demo5@hathawaypharmacy.co.uk',
+      directionsQuery: '3+Orchard+Way+Townsville',
+      openByDay: {
+        0: null,
+        1: [9, 0, 17, 0],
+        2: [9, 0, 17, 0],
+        3: [9, 0, 17, 0],
+        4: [9, 0, 17, 0],
+        5: [9, 0, 16, 0],
+        6: [9, 0, 13, 0],
+      },
+      bookingConsultationHours: [
+        { label: 'Monday – Thursday', value: '09:00 – 16:00' },
+        { label: 'Friday', value: '09:00 – 15:30' },
+        { label: 'Saturday', value: '09:00 – 12:30' },
+        { label: 'Sunday', value: 'Closed' },
+      ],
+    },
+  ];
+
+  let currentLocationIndex = 0;
+  try {
+    const saved = parseInt(localStorage.getItem('selected_location_index') || '0', 10);
+    if (!Number.isNaN(saved) && saved >= 0 && saved < locations.length) currentLocationIndex = saved;
+  } catch (e) {
+    currentLocationIndex = 0;
+  }
 
   function isOpenNow() {
     const now   = new Date();
     const day   = now.getDay();
-    const hours = hoursData[day];
+    const hours = locations[currentLocationIndex].openByDay[day];
     if (!hours) return false;
 
     const [oh, om, ch, cm] = hours;
@@ -77,6 +192,142 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateOpenStatus();
   setInterval(updateOpenStatus, 60000); // refresh every minute
+
+  /* ══════════════════════════════════════
+     3. MULTI-LOCATION SWITCHING (demo data)
+  ══════════════════════════════════════ */
+  function pad2(n) { return String(n).padStart(2, '0'); }
+  function formatHoursRange(openArr) {
+    if (!openArr) return 'Closed';
+    const [oh, om, ch, cm] = openArr;
+    return `${pad2(oh)}:${pad2(om)} – ${pad2(ch)}:${pad2(cm)}`;
+  }
+
+  function applyLocation(index) {
+    const loc = locations[index] || locations[0];
+
+    // Visual confirmation that the script is running
+    const locSelected = document.getElementById('location-selected-display');
+    if (locSelected) locSelected.textContent = `Selected: ${loc.name}`;
+
+    // Top bar
+    const topAddr = document.getElementById('topbar-address');
+    if (topAddr) topAddr.textContent = loc.addressOneLine;
+
+    const topPhone = document.getElementById('topbar-phone-link');
+    if (topPhone) {
+      topPhone.href = `tel:${loc.phoneE164}`;
+      topPhone.textContent = loc.phoneDisplay;
+    }
+
+    const topEmail = document.getElementById('topbar-email-link');
+    if (topEmail) {
+      topEmail.href = `mailto:${loc.email}`;
+      topEmail.textContent = loc.email;
+    }
+
+    // Visit Us chips
+    const hoursCall = document.getElementById('hours-call-link');
+    if (hoursCall) hoursCall.href = `tel:${loc.phoneE164}`;
+
+    const hoursEmail = document.getElementById('hours-email-link');
+    if (hoursEmail) hoursEmail.href = `mailto:${loc.email}`;
+
+    const hoursDirs = document.getElementById('hours-directions-link');
+    if (hoursDirs) hoursDirs.href = `https://maps.google.com/?q=${loc.directionsQuery}`;
+
+    // Booking panel
+    const bookingAddr = document.getElementById('booking-address');
+    if (bookingAddr) bookingAddr.innerHTML = loc.addressOneLine.replace(', ', '<br>').replace(', ', '<br>');
+
+    const bookingDirs = document.getElementById('booking-directions-link');
+    if (bookingDirs) bookingDirs.href = `https://maps.google.com/?q=${loc.directionsQuery}`;
+
+    const bookingPhone = document.getElementById('booking-phone-link');
+    if (bookingPhone) {
+      bookingPhone.href = `tel:${loc.phoneE164}`;
+      bookingPhone.textContent = `📞 Prefer to call? ${loc.phoneDisplay}`;
+    }
+
+    const bookingHoursList = document.getElementById('booking-slot-list');
+    if (bookingHoursList) {
+      const items = bookingHoursList.querySelectorAll('li');
+      loc.bookingConsultationHours.forEach((h, i) => {
+        const li = items[i];
+        if (!li) return;
+        const spans = li.querySelectorAll('span');
+        if (spans[0]) spans[0].textContent = h.label;
+        if (spans[1]) spans[1].textContent = h.value;
+      });
+    }
+
+    // Opening hours table
+    document.querySelectorAll('.hours-row').forEach(row => {
+      const d = parseInt(row.dataset.day, 10);
+      const timeEl = row.querySelector('.time');
+      if (!timeEl) return;
+      const range = formatHoursRange(loc.openByDay[d]);
+      timeEl.textContent = range;
+    });
+
+    // Top bar hours summary
+    const topSummary = document.getElementById('topbar-hours-summary');
+    if (topSummary) {
+      const mon = formatHoursRange(loc.openByDay[1]);
+      const fri = formatHoursRange(loc.openByDay[5]);
+      const sat = formatHoursRange(loc.openByDay[6]);
+      if (mon === fri) {
+        topSummary.textContent = `Mon–Fri: ${mon} | Sat: ${sat}`;
+      } else {
+        topSummary.textContent = `Mon–Thu: ${mon} | Fri: ${fri} | Sat: ${sat}`;
+      }
+    }
+
+    // NHS App nomination copy
+    const nhsBranch = document.getElementById('nhs-branch-name');
+    if (nhsBranch) nhsBranch.textContent = `Hathaway Pharmacy (${loc.name})`;
+
+    // Sync dropdowns (no change events fired by setting value)
+    const topbarSel = document.getElementById('topbar-location-select');
+    if (topbarSel) topbarSel.value = String(index);
+    if (document.getElementById('location-select')) {
+      document.getElementById('location-select').value = String(index);
+    }
+  }
+
+  // Init selector + apply current location
+  const locationSelect = document.getElementById('location-select');
+  const topbarLocationSelect = document.getElementById('topbar-location-select');
+
+  applyLocation(currentLocationIndex);
+
+  if (locationSelect) {
+    locationSelect.value = String(currentLocationIndex);
+    locationSelect.addEventListener('change', () => {
+      const next = parseInt(locationSelect.value, 10);
+      if (Number.isNaN(next)) return;
+      currentLocationIndex = next;
+      try {
+        localStorage.setItem('selected_location_index', String(currentLocationIndex));
+      } catch (e) {}
+      applyLocation(currentLocationIndex);
+      updateOpenStatus();
+    });
+  }
+
+  if (topbarLocationSelect) {
+    topbarLocationSelect.value = String(currentLocationIndex);
+    topbarLocationSelect.addEventListener('change', () => {
+      const next = parseInt(topbarLocationSelect.value, 10);
+      if (Number.isNaN(next)) return;
+      currentLocationIndex = next;
+      try {
+        localStorage.setItem('selected_location_index', String(currentLocationIndex));
+      } catch (e) {}
+      applyLocation(currentLocationIndex);
+      updateOpenStatus();
+    });
+  }
 
   /* ══════════════════════════════════════
      3. HOURS TABLE — Highlight today

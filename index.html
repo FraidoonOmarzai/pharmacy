@@ -13,16 +13,27 @@
   <!-- ══════════════════════════════════════ TOP BAR ══════════════════════════════════════ -->
   <div class="topbar" id="topbar">
     <div class="topbar-left">
-      <span class="topbar-item"><span class="topbar-icon">📍</span> 12 High Street, Townsville, TS1 2PH</span>
+      <span class="topbar-item"><span class="topbar-icon">📍</span> <span id="topbar-address">12 High Street, Townsville, TS1 2PH</span></span>
       <span class="topbar-divider">|</span>
-      <span class="topbar-item"><span class="topbar-icon">📞</span> <a href="tel:+441234567890">01234 567 890</a></span>
+      <span class="topbar-item"><span class="topbar-icon">📞</span> <a href="tel:+441234567890" id="topbar-phone-link">01234 567 890</a></span>
       <span class="topbar-divider">|</span>
-      <span class="topbar-item"><span class="topbar-icon">✉️</span> <a href="mailto:hello@hathawaypharmacy.co.uk">hello@hathawaypharmacy.co.uk</a></span>
+      <span class="topbar-item"><span class="topbar-icon">✉️</span> <a href="mailto:hello@hathawaypharmacy.co.uk" id="topbar-email-link">hello@hathawaypharmacy.co.uk</a></span>
     </div>
     <div class="topbar-right">
       <span class="topbar-badge open" id="topbar-status"><span class="status-dot"></span><span id="open-status-text">Open Now</span></span>
       <span class="topbar-divider">|</span>
-      <span class="topbar-item">Mon–Fri: 09:00–18:00 &nbsp;|&nbsp; Sat: 09:30–14:00</span>
+      <span class="topbar-item" id="topbar-hours-summary">Mon–Fri: 09:00–18:00 &nbsp;|&nbsp; Sat: 09:30–14:00</span>
+      <span class="topbar-divider">|</span>
+      <span class="topbar-item" style="display:flex;align-items:center;gap:0.5rem;">
+        <span style="font-weight:700;">Location</span>
+        <select id="topbar-location-select" aria-label="Select location" style="padding:0.35rem 0.55rem;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(10,46,31,0.15);color:#e8fff2;">
+          <option value="0">Demo 1</option>
+          <option value="1">Demo 2</option>
+          <option value="2">Demo 3</option>
+          <option value="3">Demo 4</option>
+          <option value="4">Demo 5</option>
+        </select>
+      </span>
       <button class="topbar-close" id="topbar-close" aria-label="Close top bar">✕</button>
     </div>
   </div>
@@ -313,7 +324,7 @@
       <div class="section-eyebrow">Prescription Request</div>
       <h2 class="section-title">Request Your Medication</h2>
       <div class="presc-note">
-        <strong>NHS App only:</strong> Request and nominate Hathaway Pharmacy from the NHS App.
+        <strong>NHS App only:</strong> Request and nominate <span id="nhs-branch-name">Hathaway Pharmacy (Demo 1)</span> from the NHS App.
       </div>
     </div>
   </section>
@@ -333,25 +344,21 @@
           <div class="bt-icon">💊</div>
           <h4>Pharmacy First</h4>
           <p>NHS clinical assessment for common conditions</p>
-          <span class="bt-price free">FREE</span>
         </div>
         <div class="booking-type-card reveal" data-delay="100" data-type="private" data-label="Private Consultation">
           <div class="bt-icon">🔒</div>
           <h4>Private Consultation</h4>
           <p>Men's health, weight management, contraception &amp; more</p>
-          <span class="bt-price">From £25</span>
         </div>
         <div class="booking-type-card reveal" data-delay="200" data-type="vaccination" data-label="Vaccination Clinic">
           <div class="bt-icon">💉</div>
           <h4>Vaccination Clinic</h4>
           <p>Travel jabs, flu, pneumococcal &amp; more</p>
-          <span class="bt-price">From £15</span>
         </div>
         <div class="booking-type-card reveal" data-delay="300" data-type="medication-review" data-label="Medication Review (NHS — Free)">
           <div class="bt-icon">📋</div>
           <h4>Medication Review</h4>
           <p>NHS Structured Medication Review (SMR)</p>
-          <span class="bt-price free">FREE</span>
         </div>
       </div>
 
@@ -437,33 +444,32 @@
           <div class="booking-form-right">
             <div class="booking-info-panel">
               <h4>📍 Where to Find Us</h4>
-              <p>12 High Street<br>Townsville<br>TS1 2PH</p>
+              <p id="booking-address">12 High Street<br>Townsville<br>TS1 2PH</p>
               <div class="booking-map-placeholder">
                 <span>🗺️</span>
-                <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank">Get Directions →</a>
+                <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank" id="booking-directions-link">Get Directions →</a>
               </div>
 
               <div class="booking-info-divider"></div>
+          <h4>⏰ Consultation Hours</h4>
+          <ul class="booking-slot-list" id="booking-slot-list">
+            <li><span>Monday – Thursday</span><span>09:00 – 17:00</span></li>
+            <li><span>Friday</span><span>09:00 – 16:30</span></li>
+            <li><span>Saturday</span><span>09:30 – 13:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
 
-              <h4>⏰ Consultation Hours</h4>
-              <ul class="booking-slot-list">
-                <li><span>Monday – Thursday</span><span>09:00 – 17:00</span></li>
-                <li><span>Friday</span><span>09:00 – 16:30</span></li>
-                <li><span>Saturday</span><span>09:30 – 13:00</span></li>
-                <li><span>Sunday</span><span>Closed</span></li>
-              </ul>
+          <div class="booking-info-divider"></div>
+          <h4>✅ What to Bring</h4>
+          <ul class="booking-bring-list">
+            <li>Photo ID (for private services)</li>
+            <li>Current medication list or repeat slip</li>
+            <li>Any relevant medical letters or results</li>
+            <li>NHS number (if known)</li>
+          </ul>
 
-              <div class="booking-info-divider"></div>
-
-              <h4>✅ What to Bring</h4>
-              <ul class="booking-bring-list">
-                <li>Photo ID (for private services)</li>
-                <li>Current medication list or repeat slip</li>
-                <li>Any relevant medical letters or results</li>
-                <li>NHS number (if known)</li>
-              </ul>
-
-              <a href="tel:+441234567890" class="booking-call-btn">📞 Prefer to call? 01234 567 890</a>
+          <div class="booking-info-divider"></div>
+              <a href="tel:+441234567890" class="booking-call-btn" id="booking-phone-link">📞 Prefer to call? 01234 567 890</a>
             </div>
           </div>
         </div>
@@ -478,12 +484,23 @@
         <div class="hours-info reveal">
           <div class="section-eyebrow">Visit Us</div>
           <h2 class="section-title">We're Open &amp; Ready to Help</h2>
+          <div class="location-selector" style="margin:0.75rem 0 1rem;">
+            <label for="location-select" style="display:block;margin-bottom:0.35rem;font-weight:600;">Choose your location</label>
+            <select id="location-select" style="width:100%;max-width:420px;padding:0.65rem 0.75rem;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(10,46,31,0.15);color:#e8fff2;">
+              <option value="0">Demo 1</option>
+              <option value="1">Demo 2</option>
+              <option value="2">Demo 3</option>
+              <option value="3">Demo 4</option>
+              <option value="4">Demo 5</option>
+            </select>
+            <div id="location-selected-display" style="margin-top:0.5rem;font-weight:700;opacity:0.95;">Selected: Demo 1</div>
+          </div>
           <p>Our dispensary and private consultation room are available throughout the week. Walk-in patients are always welcome for prescription collection, over-the-counter advice, and general health queries.</p>
-          <p>We are conveniently located on the High Street with step-free access, nearby car parking, and a bus stop directly outside.</p>
+          <p>We are conveniently located with step-free access, nearby car parking, and a bus stop directly outside.</p>
           <div class="contact-chips">
-            <a href="tel:+441234567890" class="chip">📞 Call Us</a>
-            <a href="mailto:hello@hathawaypharmacy.co.uk" class="chip">✉️ Email Us</a>
-            <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank" class="chip">📍 Get Directions</a>
+            <a href="tel:+441234567890" class="chip" id="hours-call-link">📞 Call Us</a>
+            <a href="mailto:hello@hathawaypharmacy.co.uk" class="chip" id="hours-email-link">✉️ Email Us</a>
+            <a href="https://maps.google.com/?q=12+High+Street+Townsville" target="_blank" class="chip" id="hours-directions-link">📍 Get Directions</a>
             <button class="chip" id="live-chat-btn">💬 Live Chat</button>
             <a href="https://www.nhsapp.service.nhs.uk/" target="_blank" class="chip nhs-chip">📱 NHS App</a>
           </div>
