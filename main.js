@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Signup form submit ── */
   document.getElementById('signup-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Account created successfully! Welcome to Zaiphar.');
+    alert('Account created successfully! Welcome to Hathaway Pharmacy.');
     closeModal();
   });
 
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Thank you for your message! A member of our team will respond shortly. 😊",
     "We typically respond within a few minutes during opening hours.",
     "For urgent matters, please call us on 01234 567 890.",
-    "You can also order prescriptions using our online form above.",
+    "You can also order prescriptions using the NHS App.",
     "Is there anything else I can help you with?",
   ];
   let botIndex = 0;
@@ -447,11 +447,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const cookieDecline = document.getElementById('cookie-decline');
 
   // Show banner only if not already accepted/declined
-  const cookiePref = localStorage.getItem('zaiphar_cookie');
+  const cookiePref = localStorage.getItem('hathaway_cookie');
   if (cookiePref) cookieBanner?.classList.add('hidden');
 
   function dismissCookieBanner(pref) {
-    localStorage.setItem('zaiphar_cookie', pref);
+    localStorage.setItem('hathaway_cookie', pref);
     cookieBanner.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     cookieBanner.style.opacity    = '0';
     cookieBanner.style.transform  = 'translateX(-50%) translateY(20px)';
@@ -549,10 +549,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ══════════════════════════════════════ */
   let toastTimeout;
   function showToast(msg, duration = 4000) {
-    let toast = document.getElementById('zaiphar-toast');
+    let toast = document.getElementById('hathaway-toast');
     if (!toast) {
       toast = document.createElement('div');
-      toast.id = 'zaiphar-toast';
+      toast.id = 'hathaway-toast';
       toast.style.cssText = `
         position:fixed; top:5.5rem; right:1.5rem; z-index:700;
         background:#0a2e1f; color:#c2e8d3;
@@ -595,7 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ══════════════════════════════════════
      INIT COMPLETE LOG
   ══════════════════════════════════════ */
-  console.log('%c Zaiphar — Website loaded ✅', 'color:#6bbf92;font-weight:bold;font-size:14px;');
+  console.log('%c Hathaway Pharmacy — Website loaded ✅', 'color:#6bbf92;font-weight:bold;font-size:14px;');
 
 });
 
